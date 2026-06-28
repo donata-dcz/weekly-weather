@@ -63,6 +63,53 @@ class WeatherDetails extends StatelessWidget {
   }
 }
 
+class DayCard extends StatelessWidget {
+  const DayCard({
+    super.key,
+    required this.day,
+    required this.icon,
+    required this.temp,
+    required this.description,
+    required this.min,
+    required this.max,
+    required this.wind,
+  });
+  final String day;
+  final IconData icon;
+  final String temp;
+  final String description;
+  final String min;
+  final String max;
+  final String wind;
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (context) => WeatherDetails(
+                day: day,
+                icon: icon,
+                description: description,
+                min: min,
+                max: max,
+                wind: wind,
+              ),
+            ),
+          );
+        },
+        child: ListTile(
+          leading: Icon(icon),
+          title: Text(day),
+          trailing: Text(temp),
+        ),
+      ),
+    );
+  }
+}
+
 class _WeeklyWeatherState extends State<WeeklyWeather> {
   @override
   Widget build(BuildContext context) {
@@ -73,176 +120,71 @@ class _WeeklyWeatherState extends State<WeeklyWeather> {
       ),
       body: ListView(
         children: <Widget>[
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Lundi 29 juin'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Lundi 29 juin',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Mardi 30 juin'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Mardi 30 juin',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Mercredi 1 juillet'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Mercredi 1 juillet',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Jeudi 2 juillet'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Jeudi 2 juillet',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Vendredi 3 juillet'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Vendredi 3 juillet',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Samedi 4 juillet'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Samedi 4 juillet',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-          Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const WeatherDetails(
-                      day: 'Lundi 29 juin',
-                      icon: Icons.sunny,
-                      description: 'Ensoleillé',
-                      min: '18°C',
-                      max: '24°C',
-                      wind: '12 km/h',
-                    ),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: Icon(Icons.sunny),
-                title: Text('Dimanche 5 juillet'),
-                trailing: Text('22.3 °C'),
-              ),
-            ),
+          const DayCard(
+            day: 'Dimanche 5 juillet',
+            icon: Icons.sunny,
+            description: 'Ensoleillé',
+            min: '18°C',
+            max: '24°C',
+            wind: '12 km/h',
+            temp: '22.3 °C',
           ),
-        ],
-      ),
+        ]
+      )
     );
   }
 }
