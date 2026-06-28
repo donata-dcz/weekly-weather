@@ -164,8 +164,8 @@ class _WeeklyWeatherState extends State<WeeklyWeather> {
             max: '28 °C',
             wind: '11 km/h',
             temp: '24 °C',
-            precip: '48 %',
-            humid: '0 %',
+            precip: '0 %',
+            humid: '48 %',
           ),
           const DayCard(
             day: 'Mercredi 1 juillet',
