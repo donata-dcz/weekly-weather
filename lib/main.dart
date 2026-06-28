@@ -34,6 +34,8 @@ class WeatherDetails extends StatelessWidget {
     required this.min,
     required this.max,
     required this.wind,
+    required this.precip,
+    required this.humid,
   });
   final String day;
   final IconData icon;
@@ -41,6 +43,8 @@ class WeatherDetails extends StatelessWidget {
   final String min;
   final String max;
   final String wind;
+  final String precip;
+  final String humid;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +60,10 @@ class WeatherDetails extends StatelessWidget {
             Text('Min: $min - Max: $max'),
             const SizedBox(height: 8),
             Text('Vent: $wind'),
+            const SizedBox(height: 8),
+            Text('Précipitations: $precip'),
+            const SizedBox(height: 8),
+            Text('Humidité: $humid'),
           ],
         ),
       ),
@@ -73,6 +81,8 @@ class DayCard extends StatelessWidget {
     required this.min,
     required this.max,
     required this.wind,
+    required this.precip,
+    required this.humid,
   });
   final String day;
   final IconData icon;
@@ -81,6 +91,8 @@ class DayCard extends StatelessWidget {
   final String min;
   final String max;
   final String wind;
+  final String precip;
+  final String humid;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -96,6 +108,8 @@ class DayCard extends StatelessWidget {
                 min: min,
                 max: max,
                 wind: wind,
+                precip: precip,
+                humid: humid,
               ),
             ),
           );
@@ -121,67 +135,92 @@ class _WeeklyWeatherState extends State<WeeklyWeather> {
       body: ListView(
         children: <Widget>[
           const DayCard(
+            day: 'Dimanche 28 juin',
+            icon: Icons.water_drop,
+            description: 'Faible pluie',
+            min: '17 °C',
+            max: '29 °C',
+            wind: '11 km/h',
+            temp: '26 °C',
+            precip: '30 %',
+            humid: '54 %',
+          ),
+          const DayCard(
             day: 'Lundi 29 juin',
             icon: Icons.sunny,
             description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            min: '15 °C',
+            max: '27 °C',
+            wind: '11 km/h',
+            temp: '22 °C',
+            precip: '0 %',
+            humid: '53 %',
           ),
           const DayCard(
             day: 'Mardi 30 juin',
             icon: Icons.sunny,
-            description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            description: 'Ensoleillé dans l\'ensemble',
+            min: '15 °C',
+            max: '28 °C',
+            wind: '11 km/h',
+            temp: '24 °C',
+            precip: '48 %',
+            humid: '0 %',
           ),
           const DayCard(
             day: 'Mercredi 1 juillet',
-            icon: Icons.sunny,
-            description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            icon: Icons.wb_sunny,
+            description: 'Partiellement ensoleillé',
+            min: '14 °C',
+            max: '24 °C',
+            wind: '16 km/h',
+            temp: '18 °C',
+            precip: '0 %',
+            humid: '54 %',
           ),
           const DayCard(
             day: 'Jeudi 2 juillet',
-            icon: Icons.sunny,
-            description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            icon: Icons.cloud,
+            description: 'Nuageux dans l\'ensemble',
+            min: '14 °C',
+            max: '27 °C',
+            wind: '19 km/h',
+            temp: '20 °C',
+            precip: '0 %',
+            humid: '54 %',
           ),
           const DayCard(
             day: 'Vendredi 3 juillet',
             icon: Icons.sunny,
             description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            min: '13 °C',
+            max: '28 °C',
+            wind: '13 km/h',
+            temp: '23 °C',
+            precip: '0 %',
+            humid: '48 %',
           ),
           const DayCard(
             day: 'Samedi 4 juillet',
             icon: Icons.sunny,
             description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            min: '14 °C',
+            max: '29 °C',
+            wind: '13 km/h',
+            temp: '25 °C',
+            precip: '0 %',
+            humid: '40 %',
           ),
           const DayCard(
             day: 'Dimanche 5 juillet',
             icon: Icons.sunny,
             description: 'Ensoleillé',
-            min: '18°C',
-            max: '24°C',
-            wind: '12 km/h',
-            temp: '22.3 °C',
+            min: '16 °C',
+            max: '30 °C',
+            wind: '13 km/h',
+            temp: '27 °C',
+            precip: '0 %',
+            humid: '42 %',
           ),
         ]
       )
